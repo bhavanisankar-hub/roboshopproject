@@ -1,19 +1,19 @@
 echo -e "\e[31mInstalling nginx server\e[0m"
-yum install nginx -y  &>>/temp/roboshopproject.log
+yum install nginx -y  &>>/tmp/roboshopproject.log
 
 
 echo -e "\e[31mRemoving old content\e[0m"
-rm -rf /usr/share/nginx/html/*  &>>/temp/roboshoproject.log
+rm -rf /usr/share/nginx/html/*  &>>/tmp/roboshoproject.log
 
 echo -e "\e[31mDownloading Frontend content\e[0m"
-curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip  &>>/temp/roboshopproject.log
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip  &>>/tmp/roboshopproject.log
 
 echo -e "\e[31mExtracting frontend content\e[0m"
-cd /usr/share/nginx/html  &>>/temp/roboshopproject.log
-unzip /tmp/frontend.zip  &>>/temp/roboshopproject.log
+cd /usr/share/nginx/html  &>>/tmp/roboshopproject.log
+unzip /tmp/frontend.zip  &>>/tmp/roboshopproject.log
 
 #copy the configuration file
 
 echo -e "\e[31mstarting nginx server\e[0m"
-systemctl enable nginx  &>>/temp/roboshopproject.log
-systemctl restart nginx  &>>/temp/roboshopproject.log
+systemctl enable nginx  &>>/tmp/roboshopproject.log
+systemctl restart nginx  &>>/tmp/roboshopproject.log
