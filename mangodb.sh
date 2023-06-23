@@ -5,7 +5,7 @@ echo -e "\e[31mInstalling mangodb\e[0m"
 yum install mongodb-org -y  &>>/tmp/roboshop.log
 
 echo -e "\e[31mupdate listen address\e[0m"
-sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mangodb.conf
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mangod.conf
 
 echo -e "\e[31mRestarting\e[0m"
 systemctl enable mongod  &>>/tmp/roboshop.log
