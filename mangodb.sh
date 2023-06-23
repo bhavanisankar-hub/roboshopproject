@@ -4,8 +4,9 @@ cp mangodb.repo /etc/yum.repos.d/mangodb.repo  &>>/tmp/roboshop.log
 echo -e "\e[31mInstalling mangodb\e[0m"
 yum install mongodb-org -y  &>>/tmp/roboshop.log
 
-# update listen address from 127.0.0.1 to 0.0.0.0
+echo -e "\e[31mupdate listen address\e[0m"
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mangodb.conf
 
 echo -e "\e[31mRestarting\e[0m"
 systemctl enable mongod  &>>/tmp/roboshop.log
-systemctl restart mongod  &>>/tmp/roboshop.log
+systemctl res  tart mongod  &>>/tmp/roboshop.log
