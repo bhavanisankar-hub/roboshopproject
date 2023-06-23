@@ -23,7 +23,7 @@ echo -e "\e[31minstalling dependencies\e[0m"
 npm install &>>/tmp/roboshoproject.log
 
 echo -e "\e[31msetup service\e[0m"
-cp catalogue.service /etc/systemd/system/catalogue.service  &>>/tmp/roboshoproject.log
+cp /home/centos/roboshopproject/catalogue.service /etc/systemd/system/catalogue.service  &>>/tmp/roboshoproject.log
 
 echo -e "\e[31mrestarting\e[0m"
 systemctl daemon-reload  &>>/tmp/roboshoproject.log
@@ -33,7 +33,7 @@ systemctl enable catalogue  &>>/tmp/roboshoproject.log
 systemctl start catalogue  &>>/tmp/roboshoproject.log
 
 echo -e "\e[31mCopying Mangorepo\e[0m"
-cp mangodb.repo /etc/yum.repos.d/mangodb.repo  &>>/tmp/roboshoproject.log
+cp /home/centos/roboshopproject/mangodb.repo /etc/yum.repos.d/mangodb.repo  &>>/tmp/roboshoproject.log
 
 echo -e "\e[31minstalling Mangorepo\e[0m"
 yum install mongodb-org-shell -y  &>>/tmp/roboshoproject.log
