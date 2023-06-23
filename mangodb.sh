@@ -1,4 +1,4 @@
-cp mangodb.repo /etc/yum.repos.d/mangodb.repo &>>/temp/roboshop.log
+cp mangodb.repo /etc/yum.repos.d/mangodb.repo  &>>/temp/roboshop.log
 
 yum install mongodb-org -y  &>>/temp/roboshop.log
 
